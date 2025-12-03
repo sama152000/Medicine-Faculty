@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npx ng build --configuration=production",
+    "build": "npx ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -29,7 +29,6 @@
     "@angular/forms": "^20.3.2",
     "@angular/platform-browser": "^20.3.2",
     "@angular/router": "^20.3.2",
-    "@angular/cli": "^20.3.2",
     "@fortawesome/fontawesome-free": "^7.0.1",
     "primeicons": "^7.0.0",
     "primeng": "^20.2.0",
@@ -39,6 +38,7 @@
   },
   "devDependencies": {
     "@angular/build": "^20.3.2",
+    "@angular/cli": "^21.0.2",
     "@angular/compiler-cli": "^20.3.2",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.9.0",
