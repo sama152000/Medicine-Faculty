@@ -1,0 +1,26 @@
+<div class="goals-section">
+  <div class="container">
+    <div class="goals-header">
+      <span class="subtitle">{{ goalsData.subtitle }}</span>
+      <h2 class="main-title">{{ goalsData.title }}</h2>
+      <p class="header-description">{{ goalsData.description }}</p>
+    </div>
+    
+    <div class="goals-timeline">
+      <div class="timeline-item" *ngFor="let goal of goalsData.goals; let i = index">
+        <div class="timeline-marker">
+          <span class="goal-number">{{ i + 1 }}</span>
+        </div>
+        <div class="timeline-content">
+          <div class="goal-card">
+            <div class="goal-icon">
+              <i [class]="goal.icon"></i>
+            </div>
+            <h3 class="goal-title">{{ goal.title }}</h3>
+            <p class="goal-description">{{ goal.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

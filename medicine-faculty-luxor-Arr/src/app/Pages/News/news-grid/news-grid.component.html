@@ -1,0 +1,38 @@
+<div class="news-grid-section">
+  <div class="container">
+    <!-- <div class="section-header">
+      <h2 class="section-title">أحدث الأخبار</h2>
+    </div> -->
+    
+    <div class="news-grid">
+      <article class="news-card" *ngFor="let news of pagedNews">
+        <div class="card-image">
+          <img [src]="news.image" [alt]="news.title" loading="lazy">
+          <div class="date-badge">
+            <span class="day">{{ news.date | date:'dd' }}</span>
+            <span class="month">{{ news.date | date:'MMM' }}</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="author-info">
+            <span class="author">{{ news.author || '---' }}</span>
+            <span *ngIf="news.category">/ <span class="specialty">{{ news.category }}</span></span>
+          </div>
+          <h3 class="card-title">{{ news.title }}</h3>
+          <p class="card-excerpt">{{ news.summary }}</p>
+          <a class="read-more" (click)="$event.stopPropagation(); goToNewsDetail(news.id)" tabindex="0">
+                        <i class="fas fa-arrow-left"></i>
+
+            تفاصيل الخبر
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div class="news-pagination" *ngIf="totalPages > 1">
+      <button class="news-pagination-btn nav-btn" [disabled]="page === 1" (click)="setPage(page-1)">السابق</button>
+      <button class="news-pagination-btn" *ngFor="let p of [].constructor(totalPages); let i = index" [class.active]="page === (i+1)" (click)="setPage(i+1)">{{ i+1 }}</button>
+      <button class="news-pagination-btn nav-btn" [disabled]="page === totalPages" (click)="setPage(page+1)">التالي</button>
+    </div>
+  </div>
+</div>

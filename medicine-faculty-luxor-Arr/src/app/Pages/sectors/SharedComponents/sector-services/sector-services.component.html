@@ -1,0 +1,184 @@
+<div class="services-container">
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-container">
+    <p-progressSpinner strokeWidth="3" animationDuration="1s"></p-progressSpinner>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!loading && services.length === 0" class="empty-state">
+    <div class="empty-content">
+      <i class="pi pi-inbox empty-icon"></i>
+      <h3>No Services Available</h3>
+      <p>No services are currently available in this sector</p>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <div *ngIf="!loading && services.length > 0" class="services-grid">
+    <div *ngFor="let service of services" class="service-card-wrapper">
+      <p-card class="service-card">
+        <ng-template pTemplate="header">
+          <div class="card-header">
+           
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="content">
+          <div class="card-content">
+            <!-- Service Name -->
+            <h3 class="service-name">{{ service.name }}</h3>
+            
+            <!-- Service Category -->
+            <div class="service-category">
+              <i class="pi pi-tag"></i>
+              <span>{{ service.category }}</span>
+            </div>
+            
+            <!-- Service Description -->
+            <p class="service-description">{{ service.details }}</p>
+            
+            <!-- Service Info -->
+            <div class="service-info">
+              <div class="info-item">
+                <i class="pi pi-clock info-icon"></i>
+                <span class="info-label">Expected Duration:</span>
+                <span class="info-value">{{ service.duration }}</span>
+              </div>
+
+              <div class="info-item" *ngIf="service.fees">
+                <i class="pi pi-dollar info-icon"></i>
+                <span class="info-label">Fees:</span>
+                <span class="info-value">{{ service.fees }} EGP</span>
+              </div>
+
+              <div class="info-item" *ngIf="!service.fees">
+                <i class="pi pi-check info-icon"></i>
+                <span class="info-label">Free</span>
+              </div>
+            </div>
+
+         
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+          <div class="card-footer">
+            <div class="action-buttons">
+            
+
+              
+
+              <!-- Details Button -->
+              <p-button
+                label="Details"
+                icon="pi pi-info-circle"
+                (click)="showDetails(service)"
+                styleClass="p-button-outlined details-button">
+              </p-button>
+            </div>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Service Details Dialog -->
+  <p-dialog
+    [(visible)]="displayDetails"
+    [modal]="true"
+    [style]="{width: '600px'}"
+    header="Service Details"
+    [rtl]="false"
+    [closable]="true"
+    (onHide)="hideDetails()">
+    
+    <div *ngIf="selectedService" class="service-details">
+      <!-- Service Header -->
+      <div class="detail-header">
+       
+        <div class="detail-title-section">
+          <h3 class="detail-title">{{ selectedService.name }}</h3>
+          <span class="detail-category">{{ selectedService.category }}</span>
+        
+        </div>
+      </div>
+
+      <!-- Service Description -->
+      <div class="detail-section">
+        <h4>Service Description</h4>
+        <p class="detail-description">{{ selectedService.details }}</p>
+      </div>
+
+     
+
+      <!-- Service Information -->
+      <div class="detail-section">
+        <h4>Service Information</h4>
+        <div class="detail-info-grid">
+          <div class="info-card">
+            <i class="pi pi-clock"></i>
+            <div class="info-content">
+              <span class="info-label">Expected Duration</span>
+              <span class="info-value">{{ selectedService.duration }}</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <i class="pi pi-dollar"></i>
+            <div class="info-content">
+              <span class="info-label">Fees</span>
+              <span class="info-value">{{ selectedService.fees ? selectedService.fees + ' EGP' : 'Free' }}</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <i [class]="selectedService.isOnline ? 'pi pi-globe' : 'pi pi-building'"></i>
+            <div class="info-content">
+              <span class="info-label">Service Type</span>
+              <span class="info-value">{{ selectedService.isOnline ? 'Online' : 'Office-based' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="detail-section" *ngIf="selectedService.contactPerson || selectedService.contactPhone">
+        <h4>Contact Information</h4>
+        <div class="contact-info">
+          <div class="contact-item" *ngIf="selectedService.contactPerson">
+            <i class="pi pi-user"></i>
+            <span><strong>Responsible Employee:</strong> {{ selectedService.contactPerson }}</span>
+          </div>
+          <div class="contact-item" *ngIf="selectedService.contactPhone">
+            <i class="pi pi-phone"></i>
+            <span><strong>Phone:</strong>
+              <a [href]="'tel:' + selectedService.contactPhone">{{ selectedService.contactPhone }}</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+      <div class="dialog-footer">
+        <!-- Dialog Action Buttons -->
+
+        <p-button
+          *ngIf="selectedService?.downloadUrl"
+          label="Download Form"
+          icon="pi pi-download"
+          (click)="downloadForm(selectedService!.downloadUrl!)"
+          styleClass="p-button-outlined">
+        </p-button>
+
+        <p-button
+          label="Close"
+          icon="pi pi-times"
+          (click)="hideDetails()"
+          styleClass="p-button-text">
+        </p-button>
+      </div>
+    </ng-template>
+  </p-dialog>
+</div>

@@ -1,0 +1,111 @@
+.parent-sector-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: var(--medicine-light-gray);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  min-height: 600px;
+  direction: ltr;
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--medicine-card-bg);
+  border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg) 0;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  padding: var(--spacing-md) var(--spacing-lg);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--medicine-primary-brown);
+  border-right: 4px solid transparent;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.sidebar nav ul li.active,
+.sidebar nav ul li:hover {
+  background: var(--medicine-primary-red-light);
+  color: var(--medicine-white);
+  border-right: 4px solid var(--medicine-primary-red);
+}
+
+.content-area {
+  flex: 1;
+  padding: var(--spacing-xl);
+  background: var(--medicine-white);
+  border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+  overflow-y: auto;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--medicine-medium-gray);
+  border-top-color: var(--medicine-primary-red);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading p {
+  font-size: 1.1rem;
+  color: var(--medicine-dark-gray);
+}
+
+@media (max-width: 900px) {
+  .parent-sector-wrapper {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    box-shadow: none;
+    padding: var(--spacing-md) 0;
+  }
+
+  .sidebar nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sidebar nav ul li {
+    border-right: none;
+    border-bottom: 4px solid transparent;
+  }
+
+  .sidebar nav ul li.active,
+  .sidebar nav ul li:hover {
+    border-right: none;
+    border-bottom: 4px solid var(--medicine-primary-red);
+  }
+
+  .content-area {
+    padding: var(--spacing-md);
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+  }
+}

@@ -1,0 +1,17 @@
+<div class="news-detail-container" *ngIf="!loading">
+  <div class="news-detail-grid">
+    <!-- الخبر الرئيسي -->
+    <div class="main-article">
+      <app-news-content [article]="newsArticle ?? null"></app-news-content>
+    </div>
+
+    <!-- الأخبار ذات الصلة -->
+    <div class="related-articles">
+      <app-related-news [relatedNews]="relatedNews"></app-related-news>
+    </div>
+  </div>
+</div>
+
+<div class="loading-container" *ngIf="loading">
+  <p-progressSpinner></p-progressSpinner>
+</div>

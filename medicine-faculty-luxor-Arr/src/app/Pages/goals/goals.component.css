@@ -1,0 +1,167 @@
+.goals-section {
+  padding: 50px 0;
+  background: var(--medicine-light-beige, #FFF8E1);
+  color: var(--medicine-text-dark, #212529);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.goals-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  display: inline-block;
+  background: var(--medicine-primary-red, #B71C1C);
+  color: var(--medicine-white, #fff);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  color: var(--medicine-primary-brown, #5D4037);
+}
+
+.header-description {
+  font-size: 1.1rem;
+  color: var(--medicine-dark-gray, #424242);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.goals-timeline {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.goals-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--medicine-primary-red, #B71C1C);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--medicine-primary-orange, #FF8F00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.goal-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--medicine-primary-brown, #5D4037);
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 0 20px;
+}
+
+.goal-card {
+  background: var(--medicine-card-bg, #fff);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(183, 28, 28, 0.12);
+}
+
+.goal-icon {
+  margin-bottom: 20px;
+}
+
+.goal-icon i {
+  font-size: 2.5rem;
+  color: var(--medicine-primary-red, #B71C1C);
+}
+
+.goal-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--medicine-primary-brown, #5D4037);
+}
+
+.goal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--medicine-dark-gray, #424242);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .goals-section {
+    padding: 40px 0;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .goals-timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .timeline-item:nth-child(even) {
+    flex-direction: column;
+  }
+  
+  .timeline-marker {
+    left: 30px;
+    transform: none;
+  }
+  
+  .timeline-content {
+    width: 100%;
+    padding-right: 60px;
+    padding-left: 0;
+  }
+}

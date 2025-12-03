@@ -1,0 +1,344 @@
+.vision-mission-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  /* background-color: #FAFAFA; */
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 50px 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #B71C1C;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5D4037;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #6D4C41;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: stretch;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.right-column {
+  flex: 1;
+}
+
+.section-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  height: 100%;
+  border: 2px solid #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 6px 25px rgba(183, 28, 28, 0.12);
+  border-color: #B71C1C;
+}
+
+.about-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-left: 5px solid #5D4037;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #424242;
+  text-align: justify;
+  font-style: italic;
+  position: relative;
+  padding-right: 20px;
+}
+
+.about-text::before {
+  content: '"';
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  font-size: 4rem;
+  color: #B71C1C;
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+.vision-card {
+  background: white;
+  border-top: 4px solid #5D4037;
+}
+
+.vision-card .icon-badge {
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #5D4037;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.3);
+}
+
+.vision-card .icon-badge i {
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.vision-card .icon-badge::after {
+  content: '';
+}
+
+.mission-card {
+  background: white;
+  border-top: 4px solid #B71C1C;
+}
+
+.mission-card .icon-badge {
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #B71C1C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(57, 73, 171, 0.3);
+}
+
+.mission-card .icon-badge i {
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.mission-card .icon-badge::after {
+  content: '';
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #5D4037;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #B71C1C 0%, #FF8F00 100%);
+  border-radius: 2px;
+}
+
+.vision-card p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #424242;
+  text-align: justify;
+}
+
+.mission-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.mission-card ul li {
+  position: relative;
+  padding-right: 35px;
+  margin-bottom: 18px;
+  line-height: 1.8;
+  color: #424242;
+  text-align: justify;
+}
+
+.mission-card ul li::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: #5D4037;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(57, 73, 171, 0.15);
+}
+
+.connection-section {
+  background: white;
+  border-radius: 24px;
+  padding: 45px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid #f5f5f5;
+  border-top: 4px solid #B71C1C;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.connection-section:hover {
+  box-shadow: 0 6px 25px rgba(183, 28, 28, 0.12);
+}
+
+.connection-section .section-title {
+  text-align: center;
+  font-size: 1.9rem;
+  color: #B71C1C;
+}
+
+.connection-section .section-title::after {
+  right: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+}
+
+.connection-card ol {
+  padding-right: 0;
+  counter-reset: connection-counter;
+  list-style: none;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+.connection-card ol li {
+  position: relative;
+  padding-right: 60px;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  color: #424242;
+  text-align: justify;
+}
+
+.connection-card ol li::before {
+  content: counter(connection-counter);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #B71C1C 0%, #8B0000 100%);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  counter-increment: connection-counter;
+  box-shadow: 0 3px 10px rgba(183, 28, 28, 0.25);
+}
+
+.decorative-element {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.decorative-element.top-right {
+  top: -20px;
+  right: -20px;
+  background: radial-gradient(circle, #B71C1C 0%, transparent 70%);
+}
+
+.decorative-element.bottom-left {
+  bottom: -20px;
+  left: -20px;
+  background: radial-gradient(circle, #5D4037 0%, transparent 70%);
+}
+
+@media (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .section-card,
+  .connection-section {
+    padding: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-mission-container {
+    padding: 40px 15px;
+  }
+  
+  .hero-section {
+    padding: 35px 20px;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.75rem;
+  }
+  
+  .section-card,
+  .connection-section {
+    padding: 25px;
+  }
+  
+  .about-text {
+    padding-left: 15px;
+  }
+  
+  .connection-card ol li {
+    padding-left: 50px;
+  }
+  
+  .connection-card ol li::before {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}

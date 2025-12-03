@@ -1,0 +1,50 @@
+<div class="parent-sector-wrapper">
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li [class.active]="activeTab === 'about'" (click)="setActiveTab('about')">عن القطاع </li>
+        <li [class.active]="activeTab === 'director'" (click)="setActiveTab('director')">رسالة المدير</li>
+          <li [class.active]="activeTab === 'vision'" (click)="setActiveTab('vision')">الرؤية</li>
+        <li [class.active]="activeTab === 'mission'" (click)="setActiveTab('mission')">الرسالة</li>
+        <li [class.active]="activeTab === 'goals'" (click)="setActiveTab('goals')">الأهداف</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="content-area" *ngIf="sector">
+    <app-sector-header
+      *ngIf="activeTab === 'about' && sector.AboutSector && mainImage"
+      [title]="sector.AboutSector.Title"
+      [about]="sector.AboutSector.About"
+      [imageUrl]="mainImage.UrlPath">
+    </app-sector-header>
+
+    <app-sector-statistics
+      *ngIf="activeTab === 'about' && sector.Statistics && sector.Statistics.length > 0"
+      [stats]="sector.Statistics">
+    </app-sector-statistics>
+
+    <app-director-message
+      *ngIf="activeTab === 'director' && sector.Director"
+      [director]="sector.Director">
+    </app-director-message>
+
+    <app-vision-mission-goals
+      *ngIf="activeTab === 'vision'"
+      [vision]="sector.Vision"
+      [showVision]="true">
+    </app-vision-mission-goals>
+
+    <app-vision-mission-goals
+      *ngIf="activeTab === 'mission'"
+      [mission]="sector.Mission"
+      [showMission]="true">
+    </app-vision-mission-goals>
+
+    <app-vision-mission-goals
+      *ngIf="activeTab === 'goals'"
+      [goals]="sector.Goals"
+      [showGoals]="true">
+    </app-vision-mission-goals>
+  </section>
+</div>

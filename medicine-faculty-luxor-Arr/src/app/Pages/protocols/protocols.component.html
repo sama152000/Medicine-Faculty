@@ -1,0 +1,83 @@
+<app-Phero-section></app-Phero-section>
+<div class="protocols-container">
+
+  <!-- Main Content -->
+  <main class="protocols-main">
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section">
+      <div class="search-container">
+        <i class="pi pi-search search-icon"></i>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="ابحث في البروتوكولات..."
+          [value]="searchTerm"
+          (input)="onSearchChange($event.target.value)"
+        />
+      </div>
+
+      <!-- Type Filter Buttons -->
+      <div class="filter-buttons">
+        <button
+          class="filter-btn"
+          [class.active]="selectedType === 'الكل'"
+          (click)="filterByType('الكل')"
+        >
+          الكل
+        </button>
+        <button
+          *ngFor="let type of cooperationTypes"
+          class="filter-btn"
+          [class.active]="selectedType === type"
+          (click)="filterByType(type)"
+        >
+          {{ type }}
+        </button>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+      <section class="summary-section">
+      <h2 class="section-title">ملخص البروتوكولات الرئيسية</h2>
+      <p class="summary-count">عرض {{ filteredProtocols.length }} من إجمالي {{ protocols.length }} بروتوكول</p>
+    </section>
+
+    <!-- Protocols Grid -->
+    <section class="protocols-grid-section">
+      <div class="protocols-grid">
+        <!-- Protocol Card -->
+        <div *ngFor="let protocol of filteredProtocols" class="protocol-card">
+          <div class="card-header">
+            <h3 class="institution-name">{{ protocol.partnerInstitution }}</h3>
+          </div>
+
+          <div class="card-body">
+            <!-- Cooperation Type -->
+            <div class="protocol-info">
+              <span class="cooperation-type" [ngClass]="getCooperationTypeClass(protocol.typeOfCooperation)">
+                {{ protocol.typeOfCooperation }}
+              </span>
+            </div>
+
+            <!-- Objective -->
+            <div class="protocol-info">
+              <p class="objective-text">{{ protocol.objective }}</p>
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
+
+      <!-- No Results Message -->
+      <div *ngIf="filteredProtocols.length === 0" class="no-results">
+        <i class="pi pi-info-circle"></i>
+        <p>لم يتم العثور على بروتوكولات تطابق معايير البحث.</p>
+      </div>
+    </section>
+
+  
+  </main>
+
+ 
+</div>

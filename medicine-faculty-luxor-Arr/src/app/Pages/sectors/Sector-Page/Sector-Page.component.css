@@ -1,0 +1,44 @@
+/* Remove all page padding/margin and set background to site palette */
+.sector-page-bg {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #F5F5F5 !important; /* Light gray from site palette */
+  min-height: 100vh;
+}
+/* Adjust hero section height and margin to reduce empty space */
+.news-hero-section {
+  height: 300px !important;
+  min-height: 300px !important;
+  margin-top: 0 !important;
+  padding-bottom: 20px !important;
+  background: linear-gradient(90deg, #B71C1C 0%, #5D4037 100%) !important;
+}
+
+/* Adjust tab menu container styles to match site style */
+.tab-menu-container {
+  padding: 10px !important;
+  margin-bottom: 10px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Adjust tab item active colors */
+.tab-item.active {
+  background: #B71C1C !important;
+  color: white !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Adjust tab item colors */
+.tab-item {
+  color: #B71C1C !important;
+  background: transparent !important;
+}
+
+/* Remove hover transform */
+.tab-item:hover {
+  background: rgba(183, 28, 28, 0.1) !important;
+  transform: none !important;
+}

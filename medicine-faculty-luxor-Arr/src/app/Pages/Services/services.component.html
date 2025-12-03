@@ -1,0 +1,11 @@
+<div class="services-page">
+  <app-services-hero></app-services-hero>
+  <div class="services-layout">
+    <div class="services-search-section">
+      <app-services-advanced-search (searchEvent)="onSearch($event)"></app-services-advanced-search>
+    </div>
+    <div class="services-cards-section">
+      <app-services-grid [searchData]="searchData"></app-services-grid>
+    </div>
+  </div>
+</div>

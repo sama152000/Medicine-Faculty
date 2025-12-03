@@ -1,0 +1,12 @@
+<div class="tab-menu-container">
+  <nav class="tab-menu">
+    <button 
+      *ngFor="let tab of tabs" 
+      class="tab-item"
+      [class.active]="currentRoute === tab.link"
+      (click)="onTabClick(tab.link)"
+      role="tab">
+      <span class="tab-label">{{ tab.title }}</span>
+    </button>
+  </nav>
+</div>

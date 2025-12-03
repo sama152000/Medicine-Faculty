@@ -1,0 +1,139 @@
+<div class="departments-container">
+  
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-container">
+    <p-progressSpinner strokeWidth="3" animationDuration="1s"></p-progressSpinner>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!loading && departments.length === 0" class="empty-state">
+    <div class="empty-content">
+      <i class="pi pi-inbox empty-icon"></i>
+      <h3>لا توجد إدارات</h3>
+      <p>لا توجد إدارات مرتبطة بهذا القطاع حالياً</p>
+    </div>
+  </div>
+
+  <!-- Departments Grid -->
+  <div *ngIf="!loading && departments.length > 0" class="departments-grid">
+    <div *ngFor="let department of departments" class="department-card-wrapper">
+      <p-card class="department-card">
+        <ng-template pTemplate="header">
+          <div class="card-header">
+            <div class="department-icon">
+              <i class="pi pi-briefcase"></i>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="content">
+          <div class="card-content">
+            <!-- Department Name -->
+            <h3 class="department-name">{{ department.name }}</h3>
+            
+            <!-- Department Description -->
+            <p class="department-description">{{ department.description }}</p>
+            
+            <!-- Manager Info -->
+            <div class="manager-info">
+              <div class="info-item">
+                <i class="pi pi-user info-icon"></i>
+                <span class="info-label">المدير:</span>
+                <span class="info-value">{{ department.manager }}</span>
+              </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+              <div class="contact-item" *ngIf="department.email">
+                <i class="pi pi-envelope contact-icon"></i>
+                <span class="contact-value">{{ department.email }}</span>
+              </div>
+              
+              <div class="contact-item" *ngIf="department.phone">
+                <i class="pi pi-phone contact-icon"></i>
+                <span class="contact-value">{{ department.phone }}</span>
+              </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="additional-info" *ngIf="department.employeesCount || department.location">
+              <div class="info-badge" *ngIf="department.employeesCount">
+                <i class="pi pi-users"></i>
+                <span>{{ department.employeesCount }} موظف</span>
+              </div>
+              
+              <div class="info-badge" *ngIf="department.location">
+                <i class="pi pi-map-marker"></i>
+                <span>{{ department.location }}</span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+          <div class="card-footer">
+            <p-button 
+              label="عرض التفاصيل" 
+              icon="pi pi-eye" 
+              (click)="showDetails(department)"
+              styleClass="p-button-outlined details-button">
+            </p-button>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Details Dialog -->
+  <p-dialog
+    [(visible)]="displayDetails"
+    [modal]="true"
+    [style]="{width: '500px'}"
+      [contentStyle]="{'background':'#fff', 'padding':'10px'}"
+
+    header="تفاصيل الإدارة"
+    [closable]="true"
+    (onHide)="hideDetails()">
+    
+    <div *ngIf="selectedDepartment" class="department-details">
+      <div class="detail-section">
+        <h4 class="detail-title">{{ selectedDepartment.name }}</h4>
+        <p class="detail-description">{{ selectedDepartment.description }}</p>
+      </div>
+
+      <div class="detail-section">
+        <h5>معلومات الاتصال</h5>
+        <div class="detail-info">
+          <div class="detail-item">
+            <strong>المدير:</strong> {{ selectedDepartment.manager }}
+          </div>
+          <div class="detail-item" *ngIf="selectedDepartment.email">
+            <strong>البريد الإلكتروني:</strong> 
+            <a [href]="'mailto:' + selectedDepartment.email">{{ selectedDepartment.email }}</a>
+          </div>
+          <div class="detail-item" *ngIf="selectedDepartment.phone">
+            <strong>الهاتف:</strong> 
+            <a [href]="'tel:' + selectedDepartment.phone">{{ selectedDepartment.phone }}</a>
+          </div>
+          <div class="detail-item" *ngIf="selectedDepartment.location">
+            <strong>الموقع:</strong> {{ selectedDepartment.location }}
+          </div>
+          <div class="detail-item" *ngIf="selectedDepartment.employeesCount">
+            <strong>عدد الموظفين:</strong> {{ selectedDepartment.employeesCount }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+      <p-button 
+        label="إغلاق" 
+        icon="pi pi-times" 
+        (click)="hideDetails()"
+        styleClass="p-button-text">
+      </p-button>
+    </ng-template>
+  </p-dialog>
+</div>

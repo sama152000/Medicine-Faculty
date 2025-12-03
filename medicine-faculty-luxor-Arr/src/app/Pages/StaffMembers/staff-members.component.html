@@ -1,0 +1,12 @@
+<div class="staff-members-page">
+  <app-staff-hero></app-staff-hero>
+  <div class="staff-layout">
+    <div class="staff-search-section">
+      <app-staff-advanced-search (searchEvent)="onSearch($event)"></app-staff-advanced-search>
+    </div>
+    
+    <div class="staff-cards-section">
+      <app-staff-grid></app-staff-grid>
+    </div>
+  </div>
+</div>

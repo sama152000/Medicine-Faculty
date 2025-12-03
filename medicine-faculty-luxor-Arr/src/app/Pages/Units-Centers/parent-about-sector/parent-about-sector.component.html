@@ -1,0 +1,76 @@
+<div class="parent-sector-wrapper">
+  <aside class="sidebar">
+    <nav>
+     <ul>
+<li [class.active]="activeTab === 'about'" (click)="setActiveTab('about')">
+  عن الوحدة / المركز
+</li>
+<li [class.active]="activeTab === 'organizational-structure'" (click)="setActiveTab('organizational-structure')">
+  الهيكل التنظيمي
+</li>
+<li [class.active]="activeTab === 'course-descriptions'" (click)="setActiveTab('course-descriptions')">
+  وصف المقررات الدراسية
+</li>
+<li [class.active]="activeTab === 'job-description-guide'" (click)="setActiveTab('job-description-guide')">
+  دليل الوصف الوظيفي
+</li>
+<li [class.active]="activeTab === 'academic-standards'" (click)="setActiveTab('academic-standards')">
+  المعايير الأكاديمية المرجعية
+</li>
+<li [class.active]="activeTab === 'vision'" (click)="setActiveTab('vision')">
+  الرؤية
+</li>
+<li [class.active]="activeTab === 'mission'" (click)="setActiveTab('mission')">
+  الرسالة
+</li>
+<li [class.active]="activeTab === 'goals'" (click)="setActiveTab('goals')">
+  الأهداف الاستراتيجية
+</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="content-area" *ngIf="unit">
+    <app-sector-header
+      *ngIf="activeTab === 'about' && unit.about"
+      [title]="unit.name || ''"
+      [about]="unit.about || ''"
+      [imageUrl]="''">
+    </app-sector-header>
+
+    <!-- Child components rendered by tags when their tab is active -->
+  <app-organizational-structure *ngIf="activeTab === 'organizational-structure'"></app-organizational-structure>
+  <app-course-descriptions *ngIf="activeTab === 'course-descriptions'"></app-course-descriptions>
+  <app-job-description-guide *ngIf="activeTab === 'job-description-guide'"></app-job-description-guide>
+  <app-academic-standards *ngIf="activeTab === 'academic-standards'"></app-academic-standards>
+
+    <div *ngIf="activeTab === 'course-descriptions'">
+      <h3>وصف عن الوحده</h3>
+      <p>{{ unit.courseDescriptions }}</p>
+    </div>
+
+    <app-vision-mission-goals
+      *ngIf="activeTab === 'vision'"
+      [vision]="{ Id: 1, Vision: unit.vision || '' }"
+      [showVision]="true"
+      [showMission]="false"
+      [showGoals]="false">
+    </app-vision-mission-goals>
+
+    <app-vision-mission-goals
+      *ngIf="activeTab === 'mission'"
+      [mission]="{ Id: 1, Mission: unit.mission || '' }"
+      [showVision]="false"
+      [showMission]="true"
+      [showGoals]="false">
+    </app-vision-mission-goals>
+
+    <app-vision-mission-goals
+      *ngIf="activeTab === 'goals'"
+      [goals]="goalsFormatted"
+      [showVision]="false"
+      [showMission]="false"
+      [showGoals]="true">
+    </app-vision-mission-goals>
+  </section>
+</div>

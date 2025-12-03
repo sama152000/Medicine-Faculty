@@ -1,0 +1,422 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import 'primeicons/primeicons.css';
+/* ===============================================
+   🎨 Global Styles for Angular Medical Interface
+   =============================================== */
+
+/* ===============================================
+   🎯 CSS Custom Properties (Variables)
+   =============================================== */
+:root {
+  /* Primary Luxor Medical Colors */
+  --medicine-primary-red: #B71C1C;
+  --medicine-primary-red-light: #C62828;
+  --medicine-primary-red-dark: #8B0000;
+  --medicine-primary-brown: #5D4037;
+  --medicine-primary-brown-light: #6D4C41;
+  --medicine-primary-orange: #FF8F00;
+  --medicine-primary-orange-light: #FFA000;
+
+  /* Medical Theme Colors */
+  --medicine-medical-blue: #1565C0;
+  --medicine-medical-blue-light: #1976D2;
+  --medicine-medical-green: #388E3C;
+  --medicine-medical-green-light: #4CAF50;
+  --medicine-medical-teal: #00796B;
+  --medicine-medical-teal-light: #26A69A;
+
+  /* Neutral Colors */
+  --medicine-white: #FFFFFF;
+  --medicine-light-gray: #F5F5F5;
+  --medicine-medium-gray: #E9ECEF;
+  --medicine-dark-gray: #424242;
+  --medicine-text-dark: #212529;
+
+  /* Background Colors */
+  --medicine-light-beige: #FFF8E1;
+  --medicine-section-bg: #FAFAFA;
+  --medicine-card-bg: #FFFFFF;
+
+  /* Global Layout */
+  --max-width: 1400px;
+  --header-height: 80px;
+  --footer-height: 60px;
+
+  /* Typography */
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-secondary: 'Arial', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 50%;
+}
+
+/* ===============================================
+   🌐 Global Reset & Base Styles
+   =============================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  line-height: 1.6;
+  color: var(--medicine-dark-gray);
+  background-color: var(--medicine-white);
+  overflow-x: hidden;
+}
+
+/* ===============================================
+   🔗 Links & Buttons
+   =============================================== */
+a {
+  color: var(--medicine-primary-red);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--medicine-primary-red-light);
+}
+
+button {
+  font-family: var(--font-family-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: var(--transition-fast);
+}
+
+button:focus {
+  outline: 2px solid var(--medicine-primary-orange);
+  outline-offset: 2px;
+}
+
+/* ===============================================
+   📝 Typography
+   =============================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-primary);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  color: var(--medicine-primary-brown);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+/* ===============================================
+   🖼️ Images & Media
+   =============================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+iframe {
+  max-width: 100%;
+  border: none;
+}
+
+/* ===============================================
+   📱 Responsive Design Utilities
+   =============================================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.d-flex { display: flex; }
+.d-block { display: block; }
+.d-none { display: none; }
+
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+
+.align-center { align-items: center; }
+.align-start { align-items: flex-start; }
+.align-end { align-items: flex-end; }
+
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+/* ===============================================
+   🎭 Animation Utilities
+   =============================================== */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.slide-down {
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================================
+   ♿ Accessibility
+   =============================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===============================================
+   📱 Responsive Breakpoints
+   =============================================== */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (max-width: 992px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.125rem; }
+}
+
+
+/* ===============================================
+   🏥 Medical Theme Enhancements
+   =============================================== */
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title h2, .section-title h3 {
+  font-family: var(--font-family-primary);
+  font-weight: 700;
+  color: var(--medicine-primary-brown);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after, .section-title h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--medicine-primary-red), var(--medicine-primary-orange));
+  border-radius: 2px;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--medicine-primary-red), var(--medicine-primary-orange));
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* ===============================================
+   🎯 Card Styles
+   =============================================== */
+.card {
+  background: var(--medicine-card-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--medicine-medium-gray);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--medicine-primary-red-light);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--medicine-primary-brown), var(--medicine-primary-red));
+  color: var(--medicine-white);
+  padding: 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: var(--medicine-primary-brown);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: var(--medicine-dark-gray);
+  line-height: 1.6;
+}
+
+/* ===============================================
+   🔘 Button Styles
+   =============================================== */
+.btn {
+  font-family: var(--font-family-primary);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--medicine-primary-red), var(--medicine-primary-red-light));
+  color: var(--medicine-white);
+  border-color: var(--medicine-primary-red);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--medicine-primary-red-dark), var(--medicine-primary-red));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--medicine-primary-red);
+  border-color: var(--medicine-primary-red);
+}
+
+.btn-outline:hover {
+  background: var(--medicine-primary-red);
+  color: var(--medicine-white);
+}
+
+/* ===============================================
+   🎯 Print Styles
+   =============================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

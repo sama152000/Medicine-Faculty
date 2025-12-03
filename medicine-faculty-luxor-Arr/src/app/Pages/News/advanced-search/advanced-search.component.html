@@ -1,0 +1,63 @@
+<div class="advanced-search-section">
+  <div class="container">
+    
+    
+    <div class="search-form">
+      <div class="search-row">
+        <div class="search-field">
+          <label for="title">عنوان الخبر</label>
+          <input
+            type="text"
+            id="title"
+            [(ngModel)]="searchData.title"
+            placeholder="اكتب عنوان الخبر..."
+            class="search-input"
+          />
+        </div>
+
+
+      </div>
+
+      <div class="search-row">
+        <div class="search-field">
+          <label for="year">السنة</label>
+          <select
+            id="year"
+            [(ngModel)]="searchData.year"
+            class="search-select"
+          >
+            <option value="">جميع السنوات</option>
+            <option *ngFor="let year of years" [value]="year">
+              {{ year }}
+            </option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label for="month">الشهر</label>
+          <select
+            id="month"
+            [(ngModel)]="searchData.month"
+            class="search-select"
+          >
+            <option value="">جميع الشهور</option>
+            <option *ngFor="let month of months" [value]="month.value">
+              {{ month.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-actions">
+        <button class="search-btn" (click)="performSearch()">
+          <i class="pi pi-search"></i>
+          بحث
+        </button>
+        <button class="clear-btn" (click)="clearSearch()">
+          <i class="pi pi-refresh"></i>
+          مسح البحث
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

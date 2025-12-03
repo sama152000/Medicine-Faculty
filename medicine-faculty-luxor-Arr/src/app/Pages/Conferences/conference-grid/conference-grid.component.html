@@ -1,0 +1,36 @@
+<div class="news-grid-section">
+  <div class="container">
+    <!-- <div class="section-header">
+      <h2 class="section-title">أحدث الأخبار</h2>
+    </div> -->
+    
+    <div class="news-grid">
+      <article class="news-card" *ngFor="let conference of pagedConferences">
+        <div class="card-image">
+          <img [src]="conference.images[0]" [alt]="conference.title" loading="lazy">
+          <div class="date-badge">
+            <span class="day">{{ conference.date | date:'dd' }}</span>
+            <span class="month">{{ conference.date | date:'MMM' }}</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="author-info">
+            <span class="author">{{ conference.organizer }}</span>
+            <span *ngIf="conference.category">/ <span class="specialty">{{ conference.category }}</span></span>
+          </div>
+          <h3 class="card-title">{{ conference.title }}</h3>
+          <p class="card-excerpt">{{ conference.summary }}</p>
+          <a class="read-more" (click)="$event.stopPropagation(); goToConferenceDetail(conference.id)" tabindex="0">
+            Details<i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div class="news-pagination" *ngIf="totalPages > 1">
+      <button class="news-pagination-btn nav-btn" [disabled]="page === 1" (click)="setPage(page-1)">Previous</button>
+      <button class="news-pagination-btn" *ngFor="let p of [].constructor(totalPages); let i = index" [class.active]="page === (i+1)" (click)="setPage(i+1)">{{ i+1 }}</button>
+      <button class="news-pagination-btn nav-btn" [disabled]="page === totalPages" (click)="setPage(page+1)">Next</button>
+    </div>
+  </div>
+</div>

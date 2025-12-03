@@ -1,0 +1,6 @@
+
+<div class="sector-page-bg">
+  <app-hero-section [sectors]="sectors"></app-hero-section>
+  <app-tab-menu [tabs]="tabs" [currentRoute]="currentRoute" (tabSelected)="onTabSelected($event)"></app-tab-menu>
+  <router-outlet></router-outlet>
+</div>

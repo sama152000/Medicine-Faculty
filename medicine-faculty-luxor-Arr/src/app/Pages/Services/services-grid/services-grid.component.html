@@ -1,0 +1,29 @@
+<div class="services-grid">
+  <div *ngFor="let service of pagedNews" class="service-card">
+
+    <!-- Card Header - Split Design (Type Left + Category Right) -->
+    <div class="card-header-split">
+      <!-- Type Section (Left Side) -->
+      <div class="card-icon-section">
+        <span class="type-text">{{ service.type }}</span>
+      </div>
+
+      <!-- Category Section (Right Side) -->
+      <div class="card-title-section">
+        <h4 class="card-title">{{ service.category }}</h4>
+      </div>
+    </div>
+
+    <!-- Card Content -->
+    <div class="card-content">
+      <h3 class="service-title">{{ service.title }}</h3>
+      <p class="card-description">{{ service.description }}</p>
+    </div>
+  </div>
+
+  <div class="news-pagination" *ngIf="totalPages > 1">
+      <button class="news-pagination-btn nav-btn" [disabled]="page === 1" (click)="setPage(page-1)">Previous</button>
+      <button class="news-pagination-btn" *ngFor="let p of [].constructor(totalPages); let i = index" [class.active]="page === (i+1)" (click)="setPage(i+1)">{{ i+1 }}</button>
+      <button class="news-pagination-btn nav-btn" [disabled]="page === totalPages" (click)="setPage(page+1)">Next</button>
+    </div>
+</div>

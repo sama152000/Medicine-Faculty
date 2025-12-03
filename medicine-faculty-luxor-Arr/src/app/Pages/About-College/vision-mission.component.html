@@ -1,0 +1,50 @@
+<div class="vision-mission-container" dir="rtl">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>رؤيتنا ورسالتنا</h1>
+    <p class="hero-subtitle">كلية الطب البشري - جامعة الأقصر</p>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="content-wrapper">
+    <!-- Left Column -->
+    <div class="left-column">
+      <!-- About Card -->
+      <div class="section-card about-card">
+        <p class="about-text">
+          تسعى كلية الطب البشري بجامعة الأقصر إلى تحقيق التميز في التعليم الطبي والبحث العلمي وخدمة المجتمع، من خلال كوادر أكاديمية وإدارية متميزة تعمل بروح الفريق لإعداد أطباء أكفاء قادرين على تلبية احتياجات المجتمع المحلي والإقليمي والمساهمة في تطوير المنظومة الصحية في مصر.
+        </p>
+      </div>
+
+      <!-- Vision Card -->
+      <div class="section-card vision-card">
+        <div class="icon-badge"><i class="fas fa-eye"></i></div>
+        <h2 class="section-title">الرؤية</h2>
+        <p>{{ visionText }}</p>
+      </div>
+    </div>
+
+    <!-- Right Column - Mission -->
+    <div class="right-column">
+      <div class="section-card mission-card">
+        <div class="icon-badge"><i class="fas fa-bullseye"></i></div>
+        <h2 class="section-title">الرسالة</h2>
+        <ul>
+          <li *ngFor="let point of missionPoints">{{ point }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Connection Section -->
+  <div class="connection-section">
+    <div class="decorative-element top-right"></div>
+    <div class="decorative-element bottom-left"></div>
+    <h2 class="section-title">الارتباط برؤية مصر 2030 ورؤية الكلية</h2>
+    <div class="connection-card">
+      <ol>
+        <li *ngFor="let point of connectionPoints">{{ point }}</li>
+      </ol>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="advanced-search-section">
+  <div class="container">
+    
+    
+    <div class="search-form">
+      <div class="search-row">
+        <div class="search-field">
+          <label for="title">عنوان الخدمة</label>
+          <input
+            type="text"
+            id="title"
+            [(ngModel)]="searchData.title"
+            placeholder="اكتب عنوان الخدمة هنا...."
+            class="search-input"
+          />
+        </div>
+
+
+      </div>
+
+      <div class="search-row">
+        <div class="search-field">
+          <label for="category">تصنيف الخدمة</label>
+          <select
+            id="category"
+            [(ngModel)]="searchData.category"
+            (change)="onCategoryChange()"
+            class="search-select"
+          >
+            <option value="">كل التصنيفات</option>
+            <option *ngFor="let category of categories" [value]="category.value">
+              {{ category.label }}
+            </option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label for="type">نوع الخدمة</label>
+          <select
+            id="type"
+            [(ngModel)]="searchData.type"
+            class="search-select"
+          >
+            <option value="">كل الأنواع</option>
+            <option *ngFor="let type of types" [value]="type.value">
+              {{ type.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-actions">
+        <button class="search-btn" (click)="performSearch()">
+          <i class="pi pi-search"></i>
+          بحث
+        </button>
+        <button class="clear-btn" (click)="clearSearch()">
+          <i class="pi pi-refresh"></i>
+         مسح البحث
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,688 @@
+/* Container Styles */
+.services-container {
+  padding: 20px;
+  background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.services-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #5a6c7d;
+  margin: 0;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.empty-content {
+  text-align: center;
+  color: #6c757d;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #e9ecef;
+}
+
+.empty-content h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+}
+
+.empty-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+  justify-content: center;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-card-wrapper {
+  height: 100%;
+}
+
+/* Card Styles */
+.service-card {
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header - تحديث لجعل العنوان في المنتصف */
+.card-header {
+  background: linear-gradient(135deg, #B71C1C 0%, #5D4037 100%);
+  padding: 25px 20px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.service-icon i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+/* Card Content - تحسينات للعنوان والمحتوى */
+.card-content {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.service-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.service-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.service-category i {
+  color: #B71C1C;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  min-height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Service Info */
+.service-info {
+  margin-bottom: 25px;
+  background: #f8f9fa;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-icon {
+  color: #B71C1C;
+  font-size: 1rem;
+  width: 20px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.info-value {
+  color: #5a6c7d;
+  font-weight: 500;
+}
+
+/* Card Footer - تحسين المسافات والتنسيق */
+.card-footer {
+  padding: 0 20px 20px 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-buttons .p-button {
+  flex: 1;
+  min-width: 120px;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.application-button {
+  background: #28a745 !important;
+  border-color: #28a745 !important;
+}
+
+.application-button:hover {
+  background: #218838 !important;
+  border-color: #218838 !important;
+  transform: translateY(-2px);
+}
+
+.download-button,
+.details-button {
+  border-width: 2px;
+}
+
+.download-button:hover,
+.details-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Dialog Styles - إضافة خلفية غير شفافة */
+.p-dialog {
+  background: white !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+}
+
+.p-dialog .p-dialog-content {
+  background: white !important;
+  border-radius: 0 !important;
+}
+
+/* Header - تأكيد الخلفية البيضاء */
+.p-dialog .p-dialog-header,
+.p-dialog-header,
+div[class*="p-dialog-header"] {
+  background: white !important;
+  background-color: white !important;
+  border-bottom: 1px solid #e9ecef !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 20px 25px !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+  color: #2c3e50 !important;
+  font-weight: 700 !important;
+  font-size: 1.4rem !important;
+}
+
+/* Footer - تأكيد الخلفية البيضاء */
+.p-dialog .p-dialog-footer,
+.p-dialog-footer,
+div[class*="p-dialog-footer"] {
+  background: white !important;
+  background-color: white !important;
+  border-top: 1px solid #e9ecef !important;
+  border-radius: 0 0 12px 12px !important;
+  padding: 20px 25px !important;
+}
+
+/* Close Button */
+.p-dialog .p-dialog-header .p-dialog-header-close {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 50% !important;
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.p-dialog-mask {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* تأكيد إضافي للديالوج */
+.p-component.p-dialog {
+  background: white !important;
+}
+
+.p-component.p-dialog * {
+  background-color: transparent;
+}
+
+.p-component.p-dialog > .p-dialog-header,
+.p-component.p-dialog > .p-dialog-content,
+.p-component.p-dialog > .p-dialog-footer {
+  background: white !important;
+}
+
+.service-details {
+  padding: 15px 0;
+  background: white;
+}
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, #B71C1C 0%, #5D4037 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.detail-icon {
+  width: 65px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+.detail-icon i {
+  font-size: 2rem;
+}
+
+.detail-title-section {
+  flex: 1;
+}
+
+.detail-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.detail-category {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.detail-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffd700;
+}
+
+.detail-section {
+  margin-bottom: 30px;
+  padding: 0 5px;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 18px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ffd700;
+  display: inline-block;
+}
+
+.detail-description {
+  color: #5a6c7d;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin: 0;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border-right: 4px solid #3b4ba8;
+}
+
+/* Requirements List */
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.requirements-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.requirements-list li:last-child {
+  border-bottom: none;
+}
+
+.requirements-list li i {
+  color: #28a745;
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Detail Info Grid */
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: #3b4ba8;
+}
+
+.info-card i {
+  font-size: 1.8rem;
+  color: #3b4ba8;
+  width: 35px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.95rem;
+  color: #5a6c7d;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.info-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Contact Info */
+.contact-info {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item i {
+  color: #B71C1C;
+  font-size: 1.2rem;
+  width: 25px;
+}
+
+.contact-item a {
+  color: #B71C1C;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #5D4037;
+  text-decoration: underline;
+}
+
+/* Dialog Footer */
+.dialog-footer {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  margin-top: 20px;
+}
+
+.dialog-footer .p-button {
+  min-width: 130px;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 20px;
+}
+
+/* Status Classes */
+.status-active .status-indicator {
+  background: #28a745;
+}
+
+.status-inactive .status-indicator {
+  background: #6c757d;
+}
+
+.status-maintenance .status-indicator {
+  background: #ffc107;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-container {
+    padding: 15px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .service-name {
+    font-size: 1.3rem;
+  }
+  
+  .card-header {
+    padding: 20px 15px;
+  }
+  
+  .card-content {
+    padding: 20px 15px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-buttons .p-button {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .detail-header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .detail-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dialog-footer {
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .dialog-footer .p-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .p-dialog {
+    width: 95% !important;
+    max-width: none !important;
+    margin: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .service-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .detail-icon {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .detail-icon i {
+    font-size: 1.6rem;
+  }
+  
+  .detail-title {
+    font-size: 1.4rem;
+  }
+  
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background: #fff !important;   /* خلفية بيضا */
+  padding: 1rem 1.5rem;          /* بادينج داخلي */
+  border-bottom: 1px solid #eee; /* خط فاصل تحت */
+    border-radius: 0 0 12px 12px !important;
+
+}
+
+:host ::ng-deep .p-dialog .p-dialog-footer {
+  background: #fff !important;   /* خلفية بيضا */
+  padding: 1rem 1.5rem;          /* بادينج داخلي */
+    border-radius: 0 0 12px 12px !important;
+
+  border-top: 1px solid #eee;    /* خط فاصل فوق */
+}
